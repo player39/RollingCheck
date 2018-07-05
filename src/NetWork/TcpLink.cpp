@@ -123,18 +123,12 @@ bool jyTcpLink::readAndCheckData(unsigned char * csendmsg, int iNum, bool crcChe
       return true;
     }
   }
+  return false;
 }
 
 QTcpSocket * jyTcpLink::returnTcpLink()
 {
-  if (m_pSocket!=nullptr)
-  {
-    return m_pSocket;
-  }
-  else
-  {
-    return nullptr;
-  }
+  return m_pSocket;
 }
 
 QByteArray * jyTcpLink::returnTcpDataSp()

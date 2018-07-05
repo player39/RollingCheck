@@ -18,6 +18,7 @@ private:
   Ui::serverClass ui;
   QTcpServer* m_pServer;
   QTcpSocket* m_pSocket;
+
 public slots:
   void slotServerNewConnect();
   void slotSocketReadData();
