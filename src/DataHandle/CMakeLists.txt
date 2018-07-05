@@ -1,0 +1,5 @@
+SET(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR0/lib})
+FILE(GLOB DATAHANDLE_CPP *.cpp)
+FILE(GLOB DATAHANDLE_HEAD ${PROJECT_SOURCE_DIR}/include/DataHandle/*.h)
+add_library(DataHandleLib STATIC ${DATAHANDLE_CPP} ${DATAHANDLE_HEAD})
+target_link_libraries(DataHandleLib LinkLib)
