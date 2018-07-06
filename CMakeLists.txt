@@ -2,16 +2,18 @@ project(Rolling_Check)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.9)
 SET(CMAKE_INCLUDE_CURRENT_DIR ON)
 SET(CMAKE_AUTOMOC ON)
-SET(CMAKE_PREFIX PATH "C:/Qt/Qt5.11.0/5.11.0/msvc2015_64")
+SET(CMAKE_PREFIX PATH "C:/Qt/Qt5.11.0/5.11.0/msvc2015_64" )
+#"C:/3rdPart/Gtest/googlemock/gtest")
+#message(${CMAKE_PREFIX})
 SET(CMAKE_INSTALL_PREFIX ${CMAKE_BINARY_DIR})
 #设置gtest lib和include路径
-SET(GTEST_INCLUDE_PATH "C:/SourceCode/googletest-master/googletest/include")
-SET(GTEST_LIB_PATH "C:/3rdPart/Gtest/googlemock/gtest")
+SET(GTEST_INCLUDE_PATH "C:/3rdPart/Gtest/install/include")
+SET(GTEST_LIB_PATH "C:/3rdPart/Gtest/install/lib")
 #设置了CMAKE_PREFIX内置变量FIND_PACKAGE才能找到Qt模块的相应位置
 INCLUDE_DIRECTORIES(
 ${PROJECT_SOURCE_DIR}/include
-#添加gtest模块
 ${GTEST_INCLUDE_PATH}
+${CMAKE_BINARY_DIR}/src/QtWin
 )
 #FIND_PACKAGE具体查找路径应该不止CMAKE_PREFIX
 FIND_PACKAGE(Qt5Widgets)
@@ -19,6 +21,7 @@ FIND_PACKAGE(Qt5Core)
 FIND_PACKAGE(Qt5Network)
 FIND_PACKAGE(Qt5Gui)
 FIND_PACKAGE(Qt5SerialPort)
+#FIND_PACKAGE(g)
 link_directories(
 ${CMAKE_CURRENT_BINARY_DIR}/lib
 ${GTEST_LIB_PATH}

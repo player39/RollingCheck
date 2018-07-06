@@ -2,7 +2,6 @@
 #define _DATAHANDLE_H
 #include<QtCore/QString>
 #include<QtCore/QDebug>
-
 unsigned int crc16Modbus(unsigned char *pData, unsigned int iNum);//crc生成码
 bool crc16ModbusCheck(QByteArray *pData, int iNum);//接受数据时生成
 int bytesToInt(QByteArray &bytes);

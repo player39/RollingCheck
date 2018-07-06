@@ -9,6 +9,7 @@ class jySendThread : public QThread
 {
   Q_OBJECT
 public:
+
   jySendThread(QObject *parent = 0);
 private:
   jyTcpLink *m_pTcpLink;
@@ -16,6 +17,7 @@ private:
 signals:
   //每隔两秒发送一个信号
   void sigCircle();
+
 public slots:
 
 protected:

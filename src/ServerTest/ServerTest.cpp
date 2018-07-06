@@ -9,7 +9,6 @@ jyServerTest::jyServerTest(QWidget *parent)
   qDebug()<<m_pServer->listen(QHostAddress::Any, 8080);
   //newConnection信号会在服务器有新连接时发送，绑定槽函数为新来的连接建立socket通信接口
   connect(m_pServer, &QTcpServer::newConnection, this, &jyServerTest::slotServerNewConnect);
-
 }
 void jyServerTest::slotServerNewConnect()
 {

@@ -8,7 +8,9 @@
 
 class jyTcpLink : public QObject
 {
+
   Q_OBJECT
+
 public:
   explicit jyTcpLink(const QString& sipAddress, const int& iport, QObject *parent = nullptr);
   bool linkStart();
@@ -21,6 +23,7 @@ public:
   QTcpSocket* returnTcpLink();
   QByteArray * returnTcpDataSp();
   QByteArray * returnTcpDataSpOrigin();
+
 private:
   QTcpSocket *m_pSocket=nullptr;
   QString m_sIPAddress;
@@ -29,6 +32,7 @@ private:
   //处理完的数据的指针
   QByteArray *m_pTcpDataHandle;
   int m_ideepNum = 0;
+
 signals:
 
 public slots :

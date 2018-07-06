@@ -96,4 +96,44 @@ QByteArray inttoByte16(int i)//用这个处理1字长数据
   return abyte0;
 }
 
+/*bool checkData(QString data, int flagModel)
+{
+
+  QRegExp Check;
+  switch (flagModel)
+  {
+  case unsignedfloatPrecision_0:
+  {
+    Check.setPattern("^[1-9]\\d*\\.\\d*|0\\.\\d*[1-9]\\d*|-[1-9]\\d{0,4}|[1-9]\\d{0,5}|0$");
+    return Check.exactMatch(data);
+    break;
+  }
+  case floatPrecision_2:
+  {
+    Check.setPattern("^([1-9]\\d{0,1}\\.\\d{1,2})|(0\\.\\d\\d{0,1})|([1-9]\\d{0,1})|0$");
+    return Check.exactMatch(data);
+    break;
+  }
+  case except_0_floatPrecision_2:
+  {
+    Check.setPattern("^([1-9]\\d{0,1}\\.\\d{1,2})|(0\\.\\d[1-9]{0,1})|([1-9]\\d{0,1})$");
+    return Check.exactMatch(data);
+    break;
+  }
+  case floatPrecision_4:
+  {
+    Check.setPattern("^[1-9]\\d{0,1}\\.\\d*|0\\.\\d*[1-9]\\d*|[1-9]\\d|[1-9]\\d{0,1}$");
+    return Check.exactMatch(data);
+    break;
+  }
+  case signfloatPrecision_0:
+  {
+    Check.setPattern("^-{0,1}[1-9]\\d*\\.\\d*|-0\\.\\d*[1-9]\\d*|-[1-9]\\d{0,4}|[1-9]\\d{0,5}$");
+    return Check.exactMatch(data);
+    break;
+  }
+  }
+  return false;
+}*/
+
 

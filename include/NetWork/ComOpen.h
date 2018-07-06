@@ -35,6 +35,7 @@ private:
   QMutex m_mPortMutex;//线程锁
   QString m_sComInfo="COM";//串口选择信息
   int m_ideepNum=0;//设置递归深度
+
 signals:
 
 

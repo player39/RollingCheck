@@ -40,6 +40,7 @@ void jyTcpLink::sendOrder(const QString& Order)
   m_pSocket->write("test");
   m_pSocket->flush();
 }
+
 void jyTcpLink::writeData(unsigned char * Order, int OrderNum)
 {
   for (int i = 0; i < OrderNum; ++i)
@@ -58,14 +59,15 @@ void jyTcpLink::writeData(unsigned char * Order, int OrderNum)
   qDebug() << OrderNum + 2 << "check order num";
   m_pSocket->write(_sendMsg , OrderNum + 2);
 }
+
 bool jyTcpLink::getPortData(bool crcCheck)
 {
   qDebug() << m_pTcpData->toHex() << "before clear";
   m_pTcpData->clear();
   qDebug() << m_pTcpData->toHex() << "after clear" << m_pTcpData->size() << "size num";
-  if (m_pSocket->waitForBytesWritten(100))//单位为毫秒 等待50毫秒 判断是否正确写入 写入则返回true
+  if (m_pSocket->waitForBytesWritten(100))//单位为毫秒 等待100毫秒 判断是否正确写入 写入则返回true
   {
-    while (m_pSocket->waitForReadyRead(150))//等待50毫秒的时间如果期间有可读数据则返回true超时则返回false
+    while (m_pSocket->waitForReadyRead(150))//等待150毫秒的时间如果期间有可读数据则返回true超时则返回false
     {
       m_pTcpData->append(m_pSocket->readAll());
     }//读取完毕
@@ -86,6 +88,7 @@ bool jyTcpLink::getPortData(bool crcCheck)
     return false;//写入失败
   }
 }
+
 bool jyTcpLink::readAndCheckData(unsigned char * csendmsg, int iNum, bool crcCheck)
 {
   if (m_ideepNum > 10)//递归出口
